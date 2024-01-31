@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bad Apple </title>
+
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+    <input type="file" id="fileInput" />
+
+    <a-scene id="js--scene">
+
+        <a-sky color="#000000"></a-sky>
+
+        <a-camera id="js--camera">
+            <a-entity id="js--subCam"
+                animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; to: 0.1 0.1 0.1;"
+
+                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 500; to: 1 1 1;"
+
+                animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 100; to: 1 1 1"
+
+                raycaster="objects: .js--clickable"
+                cursor="fuse: true; fuseTimeout: 500;"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: white; shader: flat; opacity: 1">
+        </a-camera>
+
+        <a-entity id="js--boxField" position="0 0 0">
+        </a-entity>
+
+        <a-cylinder class="js--telePlatform js--clickable" radius="1" height="0.1" position="0 -1 40" rotation="0 0 0" color="#ff0000"></a-cylinder>
+    </a-scene>    
+    
+</body>
+</html>
